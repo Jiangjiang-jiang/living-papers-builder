@@ -1,0 +1,343 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.app-card {
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.app-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-size: 24px;
+}
+
+.upload-zone {
+  margin-bottom: 20px;
+  border: 2px dashed #3498db;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.upload-zone.main {
+  background-color: #ebf7fd;
+}
+
+.upload-zone.support {
+  border-color: #2ecc71;
+  background-color: #edfbf3;
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0;
+}
+
+.select-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 10px 0;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.select-button:hover {
+  background-color: #2980b9;
+}
+
+.hidden-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.remove-button {
+  padding: 4px 8px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.remove-button:hover {
+  background-color: #c0392b;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.build-button {
+  flex: 2;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.build-button:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.build-button.disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.reset-button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #95a5a6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reset-button:hover:not(:disabled) {
+  background-color: #7f8c8d;
+}
+
+.reset-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.message.error {
+  background-color: #fdeded;
+  color: #c0392b;
+}
+
+.message.success {
+  background-color: #edfded;
+  color: #27ae60;
+}
+
+.message.idle {
+  background-color: #f8f9fa;
+  color: #7f8c8d;
+}
+
+.download-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #2ecc71;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.download-button:hover {
+  background-color: #27ae60;
+}
+
+.file-list {
+  margin-top: 15px;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 4px;
+}
+
+.file-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.file-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+.file-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.file-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+h3 {
+  margin: 0;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 18px;
+}
+
+p {
+  margin: 0;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+/* Hover effects for upload zones */
+.upload-zone:hover {
+  border-style: solid;
+}
+
+.upload-zone.main:hover {
+  background-color: #e3f2fd;
+}
+
+.upload-zone.support:hover {
+  background-color: #e8f6f0;
+}
+
+/* Drag over effects */
+.upload-zone.dragover {
+  border-style: solid;
+  background-color: #f8f9fa;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-container {
+    margin: 10px;
+  }
+
+  .app-card {
+    padding: 20px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .build-button,
+  .reset-button {
+    flex: none;
+    width: 100%;
+  }
+
+  .file-item {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .file-item .remove-button {
+    width: 100%;
+  }
+}
+
+/* Animation for messages */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Ensure all interactive elements show pointer cursor */
+button,
+.select-button,
+.download-button {
+  cursor: pointer;
+}
+
+/* Prevent text selection on buttons and labels */
+button,
+.select-button {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Improve accessibility */
+.hidden-input:focus + .select-button {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+/* Add focus styles for better accessibility */
+button:focus,
+.select-button:focus,
+.download-button:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+/* Ensure text contrast */
+p {
+  color: #4a4a4a;
+}
