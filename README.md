@@ -76,6 +76,10 @@ living-papers/
 
 ## Screenshots
 
-User Interface & Uploading and Downloading:
+User Interface:
 
-<img src="./img-1.png" alt="img-1" style="zoom:35%;" />                       <img src="./img-2.png" alt="img-2" style="zoom:35%;" />
+<img src="./img-1.png" alt="img-1" width="30%" />                       
+
+Uploading and Downloading:
+
+<img src="./img-2.png" alt="img-2" width="30%" />
